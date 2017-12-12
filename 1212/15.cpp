@@ -10,8 +10,7 @@ int n, A[50];
 int solve(int selection, int mass){
     if(mass == 0) return true;
     if(selection >= n) return false;
-    bool solved = solve(selection+1, mass) || solve(selection+1, mass - A[selection]);
-    return solved;
+    return solve(selection+1, mass) || solve(selection+1, mass - A[selection]);
 }
 
 int main(void){
@@ -23,8 +22,8 @@ int main(void){
     cin >> q;
     for(int i = 0; i < q; i++){
         cin >> M;
-        if(solve(0, M)) cout << "yes" << endl;
-        else cout << "no" << endl;
+        if(solve(0, M)) cout << "true" << endl;
+        else cout << "false" << endl;
     }
     return 0;
 }
